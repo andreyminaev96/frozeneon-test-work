@@ -1,13 +1,4 @@
 <template>
-  <!--  <el-pagination-->
-  <!--    background-->
-  <!--    layout="prev, pager, next"-->
-  <!--    :total="total"-->
-  <!--    :page-size="10"-->
-  <!--    :current-page="currentPage"-->
-  <!--    @current-change="handlerCurrentChangePagination"-->
-  <!--  >-->
-  <!--  </el-pagination>-->
   <v-pagination v-model="page" :length="total"></v-pagination>
 </template>
 <script>

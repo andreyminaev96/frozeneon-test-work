@@ -1,6 +1,7 @@
+interface PackageTagsInterface {
+  latest: string
+}
 export interface PackageInterface {
-  type: string
-  name: string
-  hits: number
-  bandwidth: number
+  tags: PackageTagsInterface
+  versions: string[]
 }

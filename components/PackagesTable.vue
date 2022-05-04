@@ -12,13 +12,13 @@
 
 <script lang="ts">
 import { defineComponent, PropType, useContext } from '@nuxtjs/composition-api'
-import { PackageInterface } from '~/types/package.interface'
 import { TableHeaderInterface } from '~/types/tableHeader.interface'
+import {PackagesInterface} from "~/types/packages.interface";
 
 export default defineComponent({
   props: {
     packages: {
-      type: Array as PropType<PackageInterface[]>,
+      type: Array as PropType<PackagesInterface[]>,
       required: true,
     },
     loading: {

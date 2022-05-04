@@ -1,9 +1,10 @@
 import { Action, Module, Mutation, VuexModule } from 'vuex-module-decorators'
+import { PackagesInterface } from '~/types/packages.interface'
 import { PackageInterface } from '~/types/package.interface'
 
 @Module
 export default class extends VuexModule {
-  packages: PackageInterface[] = []
+  packages: PackagesInterface[] = []
   package: PackageInterface | null = null
   loader: boolean = false
   error: string | null = null
@@ -14,7 +15,7 @@ export default class extends VuexModule {
   }
 
   @Mutation
-  setPackages(payload: PackageInterface[]): void {
+  setPackages(payload: PackagesInterface[]): void {
     this.packages = payload
   }
 
@@ -34,12 +35,12 @@ export default class extends VuexModule {
   }
 
   @Action
-  async handleChangePackages(data: PackageInterface[]): Promise<void> {
+  async handleChangePackages(data: PackagesInterface[]): Promise<void> {
     await this.context.commit('setPackages', data)
   }
 
   @Action
-  async handleChangePackage(data: PackageInterface): Promise<void> {
+  async handleChangePackage(data: PackagesInterface): Promise<void> {
     await this.context.commit('setPackage', data)
   }
 
@@ -52,7 +53,7 @@ export default class extends VuexModule {
     return this.loader
   }
 
-  get getPackages(): PackageInterface[] {
+  get getPackages(): PackagesInterface[] {
     return this.packages
   }
 

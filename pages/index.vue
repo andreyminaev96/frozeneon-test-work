@@ -30,9 +30,10 @@ import {
   useStore,
   watch,
 } from '@nuxtjs/composition-api'
-import { PackageInterface } from '~/types/package.interface'
 import useGetPackagesSetting from '~/hooks/useGetPackagesSetting'
 import useGetPackageSetting from '~/hooks/useGetPackageSetting'
+import { PackagesInterface } from '~/types/packages.interface'
+import { PackageInterface } from '~/types/package.interface'
 
 export default defineComponent({
   setup() {
@@ -40,9 +41,11 @@ export default defineComponent({
     const openModal = ref<boolean>(false)
     const page = ref<number>(1)
     const currentPackageName = ref<string>('')
-    const getPackage = computed((): any => store.getters.getPackage)
+    const getPackage = computed(
+      (): PackageInterface => store.getters.getPackage
+    )
     const getPackages = computed(
-      (): PackageInterface[] => store.getters.getPackages
+      (): PackagesInterface[] => store.getters.getPackages
     )
     const getLoader = computed((): boolean => store.getters.getLoader)
     watch(page, () => setGetPackagesLogic())
@@ -54,7 +57,7 @@ export default defineComponent({
     const handlerClickTableRowEmitter = async ({
       type,
       name,
-    }: PackageInterface): Promise<void> => {
+    }: PackagesInterface): Promise<void> => {
       await setGetPackageLogic(type, name)
       currentPackageName.value = name
       openModal.value = true

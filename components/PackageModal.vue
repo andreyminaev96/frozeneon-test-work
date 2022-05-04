@@ -30,6 +30,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, ref } from '@nuxtjs/composition-api'
+import { PackageInterface } from '~/types/package.interface'
 
 export default defineComponent({
   props: {
@@ -38,7 +39,7 @@ export default defineComponent({
       required: true,
     },
     package: {
-      type: Object as PropType<any>,
+      type: Object as PropType<PackageInterface>,
       required: true,
     },
   },
