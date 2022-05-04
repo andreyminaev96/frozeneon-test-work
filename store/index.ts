@@ -40,7 +40,7 @@ export default class extends VuexModule {
   }
 
   @Action
-  async handleChangePackage(data: PackagesInterface): Promise<void> {
+  async handleChangePackage(data: PackageInterface): Promise<void> {
     await this.context.commit('setPackage', data)
   }
 
