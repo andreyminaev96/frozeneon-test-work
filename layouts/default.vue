@@ -17,7 +17,13 @@
         <v-card-title>
           <strong class="subheading">Minaiev Andrii</strong>
           <v-spacer></v-spacer>
-          <v-btn class="mx-4" dark icon> gggg </v-btn>
+          <v-btn
+            type="button"
+            href="https://github.com/andreyminaev96/frozeneon-test-work"
+            class="mx-4"
+            dark
+            >github.com</v-btn
+          >
         </v-card-title>
 
         <v-card-text class="py-2 white--text text-center">
