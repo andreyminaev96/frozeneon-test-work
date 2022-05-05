@@ -7,6 +7,7 @@
       @clickTableRowEmitter="handlerClickTableRowEmitter"
     />
     <custom-pagination
+      class="pt-2"
       :total="100"
       :model-value="page"
       :current-page="page"
