@@ -51,14 +51,8 @@ export default defineComponent({
     const handlerClickTableRow = (data: any): void => {
       emit('clickTableRowEmitter', data)
     }
-    const filter = (value: string, search: string): boolean => {
-      return (
-        value != null &&
-        search != null &&
-        typeof value === 'string' &&
-        value.toString().includes(search)
-      )
-    }
+    const filter = (value: string, search: string): boolean =>
+      value != null && search != null && value.toString().includes(search)
     return {
       ctx,
       headers,
